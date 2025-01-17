@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Petstore.Server.Data;
 
@@ -10,9 +11,11 @@ using Petstore.Server.Data;
 namespace Petstore.Server.Migrations
 {
     [DbContext(typeof(PetstoreContext))]
-    partial class PetstoreContextModelSnapshot : ModelSnapshot
+    [Migration("20250117045533_WorkOnPetModel")]
+    partial class WorkOnPetModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
