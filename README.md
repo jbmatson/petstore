@@ -44,12 +44,20 @@ bash
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
-4. Run the Application
+4. Run the Back-end Application
 ```
 bash
 dotnet run
 ```
 The API will be available at http://localhost:5000
+5. Run the Angular Front-End Application
+```
+ng serve
+```
+The front end will be available at http://localhost:54205/
 
 ### To do list ###
-This is still a work in progress...
+This is still a work in progress unfortunately...
+* Pet PhotoUrls property is not yet implemented
+* Still need to implement Angular front end - Should allow filtering pets by status, and ideally use Angular Material UI to look nice.
+  
