@@ -11,6 +11,14 @@ namespace Petstore.Server.Data
         {
         }
 
+        // Parameterless constructor for design-time tools
+        public PetstoreContext() : base(new DbContextOptionsBuilder<PetstoreContext>()
+            .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=PetstoreDb;Trusted_Connection=True;")
+            .Options)
+        {
+        }
+
+
         public DbSet<Pet> Pets { get; set; }
         public DbSet<Tag> Tags { get; set; }
 
@@ -20,8 +28,13 @@ namespace Petstore.Server.Data
                 .Property(p => p.Status)
                 .HasConversion<string>(); // To ensure enums are stored as strings if using an enum type for Status
 
-            modelBuilder.Entity<Pet>()
-                .OwnsMany(p => p.PhotoUrls); // Configures PhotoUrls as a collection
+            //modelBuilder.Entity<Pet>(entity =>
+            //{
+            //    entity.OwnsMany(p => p.PhotoUrls, photo =>
+            //    {
+            //        photo.WithOwner();
+            //    });
+            //});
         }
     }
 }

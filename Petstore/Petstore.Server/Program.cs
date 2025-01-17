@@ -10,14 +10,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+builder.Services.AddDbContext<PetstoreContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PetstoreDatabase")));
+
 var app = builder.Build();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
 
-builder.Services.AddDbContext<PetstoreContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PetstoreDatabase")));
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
