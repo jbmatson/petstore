@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Find Pets by Status</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Select Status</mat-label>
+    <mat-select [(ngModel)]="selectedStatuses" multiple>
+      <mat-option *ngFor="let status of statuses" [value]="status">
+        {{ status }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="loadPets()">Filter</button>
+
+  <div class="pet-list">
+    <mat-card *ngFor="let pet of pets" class="pet-card">
+      <mat-card-title>{{ pet.name }}</mat-card-title>
+      <mat-card-subtitle>Status: {{ pet.status }}</mat-card-subtitle>
+      <mat-card-content>
+        <p *ngIf="pet.photoUrls.length > 0">Photo URLs:</p>
+        <ul>
+          <li *ngFor="let url of pet.photoUrls">{{ url }}</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
