@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Petstore.Server.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,6 +14,10 @@ var app = builder.Build();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
+
+builder.Services.AddDbContext<PetstoreContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PetstoreDatabase")));
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
