@@ -44,12 +44,17 @@ bash
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
-4. Run the Application
+4. Run the Back-end Application
 ```
 bash
 dotnet run
 ```
 The API will be available at http://localhost:5000
+5. Run the Angular Front-End Application
+```
+ng serve
+```
+The front end will be available at http://localhost:54205/
 
 ### To do list ###
 This is still a work in progress unfortunately...
