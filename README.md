@@ -59,7 +59,7 @@ The front end will be available at http://localhost:54205/
 ### To do list ###
 This is still a work in progress unfortunately...
 * Pet PhotoUrls property is not yet implemented.
-* Angular front end is still a work in progress. The PetService is making the correct API call to the backend to retrieve the Pets, but the UI isn't updating and I ran out of time while diagnosing it.
+* Angular front end is still a work in progress. The PetService is making the correct API call to the backend to retrieve the Pets, but the UI isn't updating and I ran out of time while diagnosing it. Looks like I still needed to set up a CORS policy to enable the client to communicate with the server.
 * I have started creating a PetRepository in the backend, but it hasn't been finished yet and isn't being used at the moment.
 
   
